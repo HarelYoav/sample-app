@@ -4,6 +4,7 @@ pipeline {
     stage("Build") {
       steps {
         sh "sudo npm install"
+        sh "mkdir -p node_modules/.cache && chmod -R 777 node_modules/.cache"
         sh "sudo npm run build"
       }
     }
